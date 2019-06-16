@@ -1,0 +1,6 @@
+.vscode/
+**/.ipynb_checkpoints/**
+__pycache__/
+.azureml/
+data/
+.DS_Store
