@@ -4,4 +4,3 @@ __pycache__/
 .azureml/
 data/
 .DS_Store
-outputs/
