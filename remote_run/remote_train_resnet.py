@@ -20,15 +20,19 @@ data_folder = os.path.join(args.data_folder, 'cars')
 
 print('training dataset is stored here:', data_folder)
 
+epochs = args.epoch
+batch_size = args.batch_size
+
 train_generator, validation_generator, test_generator = create_generators(
-    data_folder)
+    data_folder,
+    batch_size
+)
+
+steps_per_epoch = train_generator.n // batch_size
+validation_steps = validation_generator.n // batch_size
 
 model = get_resnet_model()
 
-epochs = args.epoch
-batch_size = args.batch_size
-steps_per_epoch = train_generator.n // batch_size
-validation_steps = validation_generator.n // batch_size
 
 # start an Azure ML run
 run = Run.get_context()

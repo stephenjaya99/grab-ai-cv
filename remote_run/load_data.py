@@ -36,7 +36,7 @@ def load_dataframe(data_folder):
     return df_train, df_test
 
 
-def create_generators(data_folder):
+def create_generators(data_folder, batch_size):
     train_dir = os.path.join(data_folder, 'cars_train')
     test_dir = os.path.join(data_folder, 'cars_test')
 
@@ -54,6 +54,7 @@ def create_generators(data_folder):
         target_size=(224, 224),
         subset='training',
         class_mode="other",
+        batch_size=batch_size,
     )
     validation_generator = datagen.flow_from_dataframe(
         df_train,
@@ -63,6 +64,7 @@ def create_generators(data_folder):
         target_size=(224, 224),
         subset='validation',
         class_mode="other",
+        batch_size=batch_size,
     )
     test_generator = datagen.flow_from_dataframe(
         df_test,
@@ -70,6 +72,7 @@ def create_generators(data_folder):
         x_col='fname',
         target_size=(224, 224),
         class_mode=None,
+        batch_size=batch_size,
     )
 
     return train_generator, validation_generator, test_generator

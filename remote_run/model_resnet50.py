@@ -19,7 +19,7 @@ def get_resnet_model():
         tf.keras.layers.Dense(196, activation='softmax')
     ])
 
-    optimizer = tf.keras.optimizers.SGD(lr=0.001, decay=0.0001)
+    optimizer = tf.keras.optimizers.SGD(lr=0.005, decay=0.0001)
     model.compile(loss="sparse_categorical_crossentropy", optimizer=optimizer,
                   metrics=["accuracy"])
 
