@@ -84,7 +84,8 @@ plt.grid(True)
 os.makedirs('./outputs/model', exist_ok=True)
 
 # serialize NN architecture to JSON
-# model_json = model.to_json()
+model_json = model.to_json()
+print(model_json)
 # save model JSON
 # with open('./outputs/model/model.json', 'w') as f:
 #     f.write(model_json)

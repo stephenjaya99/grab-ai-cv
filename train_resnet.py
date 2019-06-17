@@ -1,6 +1,6 @@
 import tensorflow as tf
 from load_data import create_generators
-from model_resnet50 import get_resnet_model
+from models.model_resnet50 import get_resnet_model
 
 print("TensorFlow version:", tf.VERSION)
 
