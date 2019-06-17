@@ -25,6 +25,8 @@ Training models are done by tuning the hyperparameters, such as epoch & batch_si
 - Due to the time constraints, the solution proposed is not perfect, it still need way more images to be trained each epoch, with another hyperparameter tuning along the way.
 - It is also needed to fine tune the models. Maybe unfreeze some of the top convolutional layers to better fit the cars data. This should be proceed with caution as this may cause overfitting.
 - Some image preprocessing can be done, such as cropping the image by the bounding box to reduce noise, and changing the aspect ratio of the image.
+![](loss_accuracy_per_epoch.jpg)
+![](final_loss_accuracy.jpg)
 
 ## Folder Documentation
 - `models`  folder holds the implementation of models that are used
