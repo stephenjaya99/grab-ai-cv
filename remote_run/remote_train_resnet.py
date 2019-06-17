@@ -66,24 +66,24 @@ run.log('Final test accuracy', score[1])
 print('Test accuracy:', score[1])
 
 plt.figure(figsize=(6, 3))
-plt.title('Stanford Cars with Keras ({} epochs)'.format(n_epochs), fontsize=14)
+plt.title('Stanford Cars with Keras ({} epochs)'.format(epochs), fontsize=14)
 plt.plot(history.history['acc'], 'b-', label='Accuracy', lw=4, alpha=0.5)
 plt.plot(history.history['loss'], 'r--', label='Loss', lw=4, alpha=0.5)
 plt.legend(fontsize=12)
 plt.grid(True)
 
 # log an image
-run.log_image('Accuracy vs Loss', plot=plt)
+# run.log_image('Accuracy vs Loss', plot=plt)
 
 # create a ./outputs/model folder in the compute target
 # files saved in the "./outputs" folder are automatically uploaded into run history
 os.makedirs('./outputs/model', exist_ok=True)
 
 # serialize NN architecture to JSON
-model_json = model.to_json()
+# model_json = model.to_json()
 # save model JSON
-with open('./outputs/model/model.json', 'w') as f:
-    f.write(model_json)
+# with open('./outputs/model/model.json', 'w') as f:
+#     f.write(model_json)
 # save model weights
 model.save_weights('./outputs/model/model_resnet50.h5')
 print("model saved in ./outputs/model folder")
